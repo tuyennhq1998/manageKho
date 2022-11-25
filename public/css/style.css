@@ -1,0 +1,101 @@
+body {
+    /* background-image: linear-gradient(to right, #e61eff, #279ac7); */
+    background-color: #22b0d0;
+    /* background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%); */
+
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.285);
+}
+
+
+.logo {
+    width: 110px;
+    cursor: pointer;
+}
+
+#user_img {
+    width: 40px;
+    cursor: pointer;
+    padding-top: 9px;
+}
+
+.welcome, .fullname {
+    color: #EB690A;
+    padding-top: 16px;
+
+}
+
+.logout {
+    color: white;
+    background: transparent;
+    border-color: white;
+}
+
+
+
+.logout:hover{
+    background-color: #EB690A;
+    border-color: white;
+} 
+
+.nav .nav-link.active {
+    background-color: #EB690A;
+    color: white;
+}
+
+
+.nav-link {
+    color: black;
+    text-align: left;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+
+.modal-header {
+    background-color: #EB690A;
+    color: white;
+}
+
+.data_table {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 1px 3px 5px #aaa;
+    border-radius: 5px;
+}
+
+.btnDanhmuc, .btnHanghoa, .btnPhieunhap, .btnPhieuxuat, .btnNhanvien, .btnKe{
+    width: fit-content;
+    margin-right: 22px;
+    background-color: black;
+}
+
+.btnDanhmuc:hover, .btnHanghoa:hover, .btnPhieunhap:hover, .btnPhieuxuat:hover, .btnNhanvien:hover, .btnKe:hover{
+    background-color: #EB690A;
+    border: none;
+}
+
+ .btnThemhanghoa, .btnThemnhanvien, .btnThemdanhmuc, .btnThemke, .btnLapphieunhap, .btnLapphieuxuat {
+    width: fit-content;
+    background-color: #EB690A;
+}
+
+.modal-dialog.lapphieunhap {
+    max-width: 4000px;
+    margin: 20px;
+}
+
+.modal-dialog.lapphieuxuat {
+    max-width: 4000px;
+    margin: 20px;
+}
+
+
+.table-sortable tbody tr {
+    cursor: move;
+}
+

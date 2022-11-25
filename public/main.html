@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/datatables.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg nav-header navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="./img/logo.png" alt="" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            
+
+            <div class="collapse navbar-collapse justify-content-end"  id="collapsibleNavbar">
+                <ul class="navbar-nav me-2o mb-2 mb-lg-0 mr-5">                    
+                    <li class="nav-item">
+                        <a href="" data-bs-toggle="modal" data-bs-target="#thongtintaikhoan"><img src="./img/user.png" alt="" id="user_img" class="me-2"></a>
+                    </li>
+                    <li class="nav-item">
+                        <p class="welcome me-1">Chào mừng,  </p>
+                    </li>
+                    <li class="nav-item">
+                        <p class="fullname me-3" id="tennhanvien" >Hoàng Quân</p>
+                    </li>
+                </ul>
+                <button class="btn logout btn-primary" type="button">Đăng xuất</button>
+            </div>
+
+            <div class="modal fade" id="thongtintaikhoan" tabindex="-1" aria-labelledby="thongtintaikhoanLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="thongtintaikhoanLabel">Thông tin tài khoản</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="tennhanvien" class="form-label">Họ và tên</label>
+                              <input type="text" class="form-control" id="tennhanvien" value="" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" value="" disabled>
+                              </div>
+                            <div class="mb-3">
+                                <label for="sdt" class="form-label">Số điện thoại</label>
+                                <input type="text" class="form-control" id="sdt" value="" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">username</label>
+                                <input type="text" class="form-control" id="username" value="" disabled>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row pt-5">
+            
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-3">
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#sanpham">Sản phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#danhmuc">Danh mục</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#lohang">Lô hàng</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#donvisp">Đơn vị sản phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#kehang">Kệ hàng</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nhapkho">Nhập kho</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#xuatkho">Xuất kho</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nhasx">Nhà sản xuất</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nhacungcap">Nhà cung cấp</a></li>
+                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#nhanvien">Nhân viên</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="sanpham">
+                            <div class="row g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row">
+                                            <h4 class="col-lg-5">Quản lý sản phẩm</h4>               
+                                        </div>
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_sanpham" class="table table-striped table-bordered" style="width: 100%">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th id="masanpham">Mã sản phẩm</th>
+                                                            <th id="tensanpham">Tên sản phẩm</th>
+                                                            <th id="soluong">Số lượng kho</th>
+                                                            <th id="dongia">Đơn giá</th>
+                                                            <th id="donvitinh">Đơn vị tính</th>
+                                                            <th id="madanhmuc">Mã danh mục</th>
+                                                            <th id="mansx">Mã nhà sản xuất</th>
+                                                            <th id="hanhdong">Hành động</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>SP001</th>
+                                                            <td>Iphone 14 Pro Max</td>
+                                                            <td>300</td>
+                                                            <td>30,000,000 VNĐ</td>
+                                                            <td>Cái</td>
+                                                            <td>DM001</td>
+                                                            <td>NS001</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>SP002</th>
+                                                            <td>Iphone 14 Pro Max</td>
+                                                            <td>300</td>
+                                                            <td>30,000,000 VNĐ</td>
+                                                            <td>Cái</td>
+                                                            <td>DM002</td>
+                                                            <td>NS002</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>SP003</th>
+                                                            <td>Iphone 14 Pro Max</td>
+                                                            <td>300</td>
+                                                            <td>30,000,000 VNĐ</td>
+                                                            <td>Cái</td>
+                                                            <td>DM003</td>
+                                                            <td>NS003</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>SP004</th>
+                                                            <td>Iphone 14 Pro Max</td>
+                                                            <td>300</td>
+                                                            <td>30,000,000 VNĐ</td>
+                                                            <td>Cái</td>
+                                                            <td>DM004</td>
+                                                            <td>NS004</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>  </td>
+                                                        </tr> 
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>                       
+                                    </div>    
+                                 </div>                              
+                            </div>
+                        </div>
+                    
+                        <div class="tab-pane" id="danhmuc">
+                            <div class="row  g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row justify-content-between">
+                                            <h4 class="col-lg-5">Quản lý danh mục</h4>
+                                            <button type="button" class="btn btn-primary btnDanhmuc" data-bs-toggle="modal" data-bs-target="#themdanhmuc">
+                                                Thêm danh mục
+                                            </button>
+                                            <div class="modal fade" id="themdanhmuc" tabindex="-1" aria-labelledby="themdanhmucLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="themdanhmucLabel">Thêm danh mục</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div class="mb-3">
+                                                                <label for="madanhmuc" class="form-label">Mã danh mục</label>
+                                                                <input type="text" class="form-control" id="madanhmuc" value="">
+                                                              </div>
+                                                            <div class="mb-3">
+                                                              <label for="tendanhmuc" class="form-label">Tên danh mục</label>
+                                                              <input type="text" class="form-control" id="tendanhmuc" value="">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                                        <button type="button" class="btn btn-primary btnThemdanhmuc">Thêm</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_danhmuc" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th id="madanhmuc">Mã danh mục</th>
+                                                            <th id="tendanhmuc">Tên danh mục</th>
+                                                            <th id="hanhdong">Hành động</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>DM001</th>
+                                                            <td>Điện thoại</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th>DM002</th>
+                                                            <td>Laptop</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th>DM003</th>
+                                                            <td>Máy tính bảng</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                          </tr>
+
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                
+                                    </div>
+
+                            
+                                </div>    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="lohang">
+                            <div class="row g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row">
+                                            <h4 class="col-lg-5">Quản lý lô hàng</h4>               
+                                        </div>
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_lohang" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                        
+                                                            <th id="malohang">Mã lô hàng</th>
+                                                            <th id="soluong">Số lượng</th>
+                                                            <th id="manhacungcap">Mã nhà cung cấp</th>
+                                                            <th id="make">Mã kệ</th>
+                                                            <th id="masanpham">Mã sản phẩm</th>
+                                                            <th id="maphieunhap">Mã phiếu nhập</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>LH001</th>
+                                                            <td>45</td>
+                                                            <td>NC002</td>
+                                                            <td>KH003</td>
+                                                            <td>SP001</td>
+                                                            <td>PN002</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>LH001</th>
+                                                            <td>45</td>
+                                                            <td>NC002</td>
+                                                            <td>KH003</td>
+                                                            <td>SP001</td>
+                                                            <td>PN002</td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <th>LH001</th>
+                                                            <td>45</td>
+                                                            <td>NC002</td>
+                                                            <td>KH003</td>
+                                                            <td>SP001</td>
+                                                            <td>PN002</td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <th>LH001</th>
+                                                            <td>45</td>
+                                                            <td>NC002</td>
+                                                            <td>KH003</td>
+                                                            <td>SP001</td>
+                                                            <td>PN002</td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <th>LH001</th>
+                                                            <td>45</td>
+                                                            <td>NC002</td>
+                                                            <td>KH003</td>
+                                                            <td>SP001</td>
+                                                            <td>PN002</td>
+                                                        </tr>
+                                                        
+                                                        
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>                       
+                                    </div>    
+                                 </div>                              
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="donvisp">
+                            <div class="row g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row">
+                                            <h4 class="col-lg-5">Quản lý đơn vị sản phẩm</h4>               
+                                        </div>
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_donvisp" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th id="series">Series</th>
+                                                            <th id="malohang">Mã lô hàng</th>
+                                                            <th id="ghichu">Ghi chú</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>ABC176212</th>
+                                                            <td>LH001</td>
+                                                            <td>Hàng mới</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>JANH18299</th>
+                                                            <td>LH002</td>
+                                                            <td>Hàng cũ</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>AJBD71261</th>
+                                                            <td>LH003</td>
+                                                            <td>Hàng mới</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>UKOL12097</th>
+                                                            <td>LH003</td>
+                                                            <td>Hàng cũ</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>HNBAS2123</th>
+                                                            <td>LH005</td>
+                                                            <td>Hàng xách tay</td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>                       
+                                    </div>    
+                                 </div>                              
+                            </div>
+                        </div>
+
+                        
+                        
+                        <div class="tab-pane" id="kehang">
+                            <div class="row  g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row justify-content-between">
+                                            <h4 class="col-lg-5">Quản lý kệ hàng</h4>
+                                            <button type="button" class="btn btn-primary btnKe" data-bs-toggle="modal" data-bs-target="#themke">
+                                                Thêm kệ
+                                            </button>
+                                            <div class="modal fade" id="themke" tabindex="-1" aria-labelledby="themkeLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="themkeLabel">Thêm kệ</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div class="mb-3">
+                                                                <label for="make" class="form-label">Mã kệ</label>
+                                                                <input type="text" class="form-control" id="make" value="">
+                                                              </div>
+                                                            <div class="mb-3">
+                                                              <label for="soluongchuaconlai" class="form-label">Số lượng chứa còn lại</label>
+                                                              <input type="text" class="form-control" id="soluongchuaconlai" value="">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                                        <button type="button" class="btn btn-primary btnThemke">Thêm</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_kehang" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th class="make">Mã kệ</th>
+                                                            <th class="soluongchuaconlai">Số lượng chứa còn lại</th>
+                                                            <th class="danhmuc">Hành động</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>KE001</th>
+                                                            <td>500</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th>KE002</th>
+                                                            <td>716</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th>KE003</th>
+                                                            <td>617</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                          </tr>
+
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                
+                                    </div>
+
+                            
+                                </div>    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="nhapkho">
+                            <div class="row  g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row justify-content-between">
+                                            <h4 class="col-lg-5">Danh sách phiếu nhập</h4>
+                                            <button type="button" class="btn btn-primary btnPhieunhap" data-bs-toggle="modal" data-bs-target="#lapphieunhap">
+                                                Lập phiếu nhập
+                                            </button>
+                                            <div class="modal fade" id="lapphieunhap" tabindex="-1" aria-labelledby="lapphieunhapLabel" aria-hidden="true">
+                                                <div class="modal-dialog lapphieunhap">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="lapphieunhapLabel">Lập phiếu nhập</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row clearfix">
+                                                            <div class="col-md-12 table-responsive">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="maphieunhap" class="form-label">Mã phiếu nhập</label>
+                                                                        <input type="text" class="form-control" id="maphieunhap" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="ngaynhap" class="form-label">Ngày nhập</label>
+                                                                        <input type="date" class="form-control" id="ngaynhap" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                      <label for="tennhanvien" class="form-label">Tên nhân viên</label>
+                                                                      <input type="text" class="form-control" id="tennhanvien" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="manhanvien" class="form-label">Mã nhân viên</label>
+                                                                        <input type="text" class="form-control" id="manhanvien" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="tennhacungcap" class="form-label">Nhà cung cấp</label>
+                                                                        <input type="text" class="form-control" id="tennhacungcap" value="">
+                                                                    </div>
+                                                                </form>
+                                                                <div class="row pt-5"></div>
+
+                                                                <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            
+                                                                            <th id="maphieunhap">Mã sản phẩm</th>
+                                                                            <th id="tensanpham">Tên sản phẩm</th>
+                                                                            <th id="soluong">Số lượng</th>
+                                                                            <th id="dongia">Đơn giá</th>
+                                                                            <th id="donvitinh">Đơn vị tính</th>
+                                                                            
+                                                                            <th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr id='addr0' data-id="0" class="hidden">
+                                                                            <td data-name="masanpham">
+                                                                                <input type="text" name='masanpham' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="tensanpham">
+                                                                                <input type="text" name='tensanpham' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="soluong">
+                                                                                <input type="text" name='soluong' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="dongia">
+                                                                                <input type="text" name='dongia' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="donvitinh">
+                                                                                <input type="text" name='donvitinh' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="del">
+                                                                                <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <a id="add_row" class="btn btn-primary float-right">Thêm hàng</a>
+
+                                                        <div class="row clearfix pt-5">
+                                                            <div class="col-md-12 table-responsive">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="ghichu" class="form-label">Ghi chú</label>
+                                                                        <input type="text" class="form-control" id="ghichu" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="tongtien" class="form-label">Tổng tiền bằng số</label>
+                                                                        <input type="text" class="form-control" id="tongtien" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="tongtienchu" class="form-label">Tổng tiền bằng chữ</label>
+                                                                        <input type="text" class="form-control" id="tongtienchu" value="">
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                                        <button type="button" class="btn btn-primary btnLapphieunhap">Xác nhận lập phiếu</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_nhapkho" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th id="maphieunhap">Mã phiếu nhập</th>
+                                                            <th id="ngaynhap">Ngày nhập</th>
+                                                            <th id="tongtien">Tổng tiền</th>
+                                                            <th id="manhanvien">Mã nhân viên</th>
+                                                            <th id="manhacc">Mã nhà cung cấp</th>
+                                                            <th id="ghichu">Ghi chú</th>
+                                                            <th id="hanhdong">Hành động</th>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>PN001</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN002</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN003</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN004</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN005</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN006</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN007</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN008</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN009</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN010</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN011</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PN012</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+
+                                                          
+                                                          
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                
+                                    </div>
+
+                            
+                                </div>
+                                <hr style="width: 1110px;">
+                                <div class="row p-3"></div>
+                                <div class="row">
+                                    <div class="row justify-content-between">
+                                        <h4 class="col-lg-5">Chi tiết phiếu nhập</h4>
+                                    
+
+                                        <!-- Code thừa nhưng không xóa, xóa bị lỗi giao diện :(( -->
+                                        <div class="" id="" tabindex="" aria-labelledby="" aria-hidden="">
+                                            <div class="">
+                                                <div class="">
+                                                    <div class="">
+                                                    <h1 class="" id=""></h1>
+                                                  
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <!-- Code thừa nhưng không xóa, xóa bị lỗi giao diện :(( -->
+
+
+                                    </div>
+
+                                    <div class="row pt-3 col-12">
+                                        <div class="data_table">
+                                            <table id="table_ctnhap" class="table table-striped table-bordered">
+                                                <thead class="table-dark">
+                                                    <tr>
+                                                        <th id="maphieunhap">Mã phiếu nhập</th>
+                                                        <th class="mahanghoa">Mã sản phẩm</th>
+                                                        <th class="soluong">Số lượng</th>
+                                                        <th class="donvi">Đơn vị tính</th>
+                                                        <th class="dongia">Đơn giá</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>                                          
+                                                    <tr>
+                                                        <th>PN001</th>
+                                                        <td>001</td>
+                                                        <td>45,000,000 VNĐ</td>
+                                                        <td>34</td>
+                                                        <td>Cái</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>PN001</th>
+                                                        <td>002</td>
+                                                        <td>65,000,000 VNĐ</td>
+                                                        <td>11</td>
+                                                        <td>Cái</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>PN001</th>
+                                                        <td>003</td>
+                                                        <td>45,000,000 VNĐ</td>
+                                                        <td>76</td>
+                                                        <td>Cái</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>PN001</th>
+                                                        <td>004</td>
+                                                        <td>23,000,000 VNĐ</td>
+                                                        <td>23</td>
+                                                        <td>Cái</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                            
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="tab-pane" id="xuatkho">
+                            <div class="row  g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row justify-content-between">
+                                            <h4 class="col-lg-5">Danh sách phiếu xuất</h4>
+                                            <button type="button" class="btn btn-primary btnPhieuxuat" data-bs-toggle="modal" data-bs-target="#lapphieuxuat">
+                                                Lập phiếu xuất
+                                            </button>
+                                            <div class="modal fade" id="lapphieuxuat" tabindex="-1" aria-labelledby="lapphieuxuatLabel" aria-hidden="true">
+                                                <div class="modal-dialog lapphieuxuat">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="lapphieuxuatLabel">Lập phiếu xuất</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row clearfix">
+                                                            <div class="col-md-12 table-responsive">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="maphieunhap" class="form-label">Mã phiếu xuất</label>
+                                                                        <input type="text" class="form-control" id="maphieunhap" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="ngaynhap" class="form-label">Ngày xuất</label>
+                                                                        <input type="date" class="form-control" id="ngaynhap" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                      <label for="tennhanvien" class="form-label">Tên nhân viên</label>
+                                                                      <input type="text" class="form-control" id="tennhanvien" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="manhanvien" class="form-label">Mã nhân viên</label>
+                                                                        <input type="text" class="form-control" id="manhanvien" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="tennhacungcap" class="form-label">Nhà cung cấp</label>
+                                                                        <input type="text" class="form-control" id="tennhacungcap" value="">
+                                                                    </div>
+                                                                </form>
+                                                                <div class="row pt-5"></div>
+
+                                                                <table class="table table-bordered table-hover table-sortable" id="tab_logic1">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            
+                                                                            <th id="masnpham">Mã sản phẩm</th>
+                                                                            <th id="tensanpham">Tên sản phẩm</th>
+                                                                            <th id="soluong">Số lượng</th>
+                                                                            <th id="dongia">Đơn giá</th>
+                                                                            <th id="donvitinh">Đơn vị tính</th>
+                                                                            
+                                                                            <th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr id='addr0' data-id="0" class="hidden">
+                                                                            <td data-name="masanpham">
+                                                                                <input type="text" name='masanpham' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="tensanpham">
+                                                                                <input type="text" name='tensanpham' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="soluong">
+                                                                                <input type="text" name='soluong' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="dongia">
+                                                                                <input type="text" name='dongia' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="donvitinh">
+                                                                                <input type="text" name='donvitinh' class="form-control" value=""/>
+                                                                            </td>
+                                                                            <td data-name="del">
+                                                                                <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <a id="add_row1" class="btn btn-primary float-right">Thêm hàng</a>
+
+                                                        <div class="row clearfix pt-5">
+                                                            <div class="col-md-12 table-responsive">
+                                                                <form>
+                                                                    <div class="mb-3">
+                                                                        <label for="ghichu" class="form-label">Ghi chú</label>
+                                                                        <input type="text" class="form-control" id="ghichu" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="tongtien" class="form-label">Tổng tiền bằng số</label>
+                                                                        <input type="text" class="form-control" id="tongtien" value="">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="tongtienchu" class="form-label">Tổng tiền bằng chữ</label>
+                                                                        <input type="text" class="form-control" id="tongtienchu" value="">
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                                        <button type="button" class="btn btn-primary btnLapphieuxuat">Xác nhập lập phiếu</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_xuatkho" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th id="maphieuxuat">Mã phiếu xuất</th>
+                                                            <th id="ngayxuat">Ngày xuất</th>
+                                                            <th id="tongtien">Tổng tiền</th>
+                                                            <th id="manhanvien">Mã nhân viên</th>
+                                                            <th id="manhacc">Mã nhà cung cấp</th>
+                                                            <th id="ghichu">Ghi chú</th>
+                                                            <th id="hanhdong">Hành động</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>PX001</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX002</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX003</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX004</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX005</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX006</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX007</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX008</th>
+                                                            <td>19/11/2022</td>
+                                                            <td>140,000,000 VNĐ</td>
+                                                            <td>NV002</td>
+                                                            <td>NC001</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                                                             
+                                                        <tr>
+                                                            <th>PX001</th>
+                                                            <td>30/11/2022</td>
+                                                            <td>56,000,000 VNĐ</td>
+                                                            <td>NV003</td>
+                                                            <td>NC004</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX002</th>
+                                                            <td>30/11/2022</td>
+                                                            <td>56,000,000 VNĐ</td>
+                                                            <td>NV003</td>
+                                                            <td>NC004</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX003</th>
+                                                            <td>30/11/2022</td>
+                                                            <td>56,000,000 VNĐ</td>
+                                                            <td>NV003</td>
+                                                            <td>NC004</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX004</th>
+                                                            <td>30/11/2022</td>
+                                                            <td>56,000,000 VNĐ</td>
+                                                            <td>NV003</td>
+                                                            <td>NC004</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PX005</th>
+                                                            <td>30/11/2022</td>
+                                                            <td>56,000,000 VNĐ</td>
+                                                            <td>NV003</td>
+                                                            <td>NC004</td>
+                                                            <td></td>
+                                                            <td><a href=""><i class="fa-regular fa-eye"></i></a></td>
+                                                        </tr>
+                                                          
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr style="width: 1110px">
+                                <div class="row p-3"></div>
+                                <div class="row">
+                                    <div class="row justify-content-between">
+                                        <h4 class="col-lg-5">Chi tiết phiếu xuất</h4>
+                                        
+
+                                        
+                                        <!-- Code thừa nhưng không xóa, xóa bị lỗi giao diện :(( -->
+                                        <div class="" id="" tabindex="" aria-labelledby="" aria-hidden="">
+                                            <div class="">
+                                                <div class="">
+                                                    <div class="">
+                                                    <h1 class="" id=""></h1>
+                                                  
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <!-- Code thừa nhưng không xóa, xóa bị lỗi giao diện :(( -->
+                                    </div>
+
+                                    
+
+                                    <div class="row pt-3 col-12">
+                                        <div class="data_table">
+                                            <table id="table_ctxuat" class="table table-striped table-bordered">
+                                                <thead class="table-dark">
+                                                    <tr>
+                                                        <th id="maphieuxuat">Mã phiếu xuất</th>
+                                                        <th id="mahanghoa">Mã sản phẩm</th>
+                                                        <th id="soluong">Số lượng</th>
+                                                        <th id="donvi">Đơn vị tính</th>
+                                                        <th id="dongia">Đơn giá</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>                                          
+                                                    <tr>
+                                                        <th>PX001</th>
+                                                        <td>001</td>
+                                                        <td>45,000,000 VNĐ</td>
+                                                        <td>34</td>
+                                                        <td>Cái</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>PX001</th>
+                                                        <td>002</td>
+                                                        <td>65,000,000 VNĐ</td>
+                                                        <td>11</td>
+                                                        <td>Cái</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>PX001</th>
+                                                        <td>003</td>
+                                                        <td>45,000,000 VNĐ</td>
+                                                        <td>76</td>
+                                                        <td>Cái</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>PX001</th>
+                                                        <td>004</td>
+                                                        <td>23,000,000 VNĐ</td>
+                                                        <td>23</td>
+                                                        <td>Cái</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="nhasx">
+                            <div class="row g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row">
+                                            <h4 class="col-lg-5">Quản lý nhà sản xuất</h4>               
+                                        </div>
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_nhasx" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th id="mansx">Mã nhà sản xuất</th>
+                                                            <th id="tennsx">Tên nhà sản xuất</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>NS001</th>
+                                                            <td>Apple</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NS002</th>
+                                                            <td>Apple</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NS003</th>
+                                                            <td>Apple</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NS004</th>
+                                                            <td>Apple</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NS005</th>
+                                                            <td>Apple</td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>                       
+                                    </div>    
+                                 </div>                              
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="nhacungcap">
+                            <div class="row g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row">
+                                            <h4 class="col-lg-5">Quản lý nhà cung cấp</h4>               
+                                        </div>
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_nhacungcap" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th scope="col" class="manhacungcap">Mã nhà cung cấp</th>
+                                                            <th scope="col" class="tennhacungcap">Tên nhà cung cấp</th>
+                                                            <th scope="col" class="diachi">Địa chỉ</th>
+                                                            <th scope="col" class="sdt">Số điện thoại</th>
+                                                            <th scope="col" class="email">Email</th>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>NC002</th>
+                                                            <td>Apple</td>
+                                                            <td>75 Nguyễn Hữu Thọ, Quận 7, HCM</td>
+                                                            <td>0871625391</td>
+                                                            <td>apple@gmail.com</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NC003</th>
+                                                            <td>Apple</td>
+                                                            <td>75 Nguyễn Hữu Thọ, Quận 7, HCM</td>
+                                                            <td>0871625391</td>
+                                                            <td>apple@gmail.com</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NC004</th>
+                                                            <td>Apple</td>
+                                                            <td>75 Nguyễn Hữu Thọ, Quận 7, HCM</td>
+                                                            <td>0871625391</td>
+                                                            <td>apple@gmail.com</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NC005</th>
+                                                            <td>Apple</td>
+                                                            <td>75 Nguyễn Hữu Thọ, Quận 7, HCM</td>
+                                                            <td>0871625391</td>
+                                                            <td>apple@gmail.com</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NC006</th>
+                                                            <td>Apple</td>
+                                                            <td>75 Nguyễn Hữu Thọ, Quận 7, HCM</td>
+                                                            <td>0871625391</td>
+                                                            <td>apple@gmail.com</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>                       
+                                    </div>    
+                                 </div>  
+                                 
+                                
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="nhanvien">
+                            <div class="row  g-0 rounded ">
+                                <div class="col p-4">
+                                    <div class="row">
+                                        <div class="row justify-content-between">
+                                            <h4 class="col-lg-5">Danh sách nhân viên</h4>
+                                            <button type="button" class="btn btn-primary btnNhanvien" data-bs-toggle="modal" data-bs-target="#themNhanvien">
+                                                Thêm nhân viên
+                                            </button>
+                                            <div class="modal fade" id="themNhanvien" tabindex="-1" aria-labelledby="themNhanvienLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="themNhanvienLabel">Thêm nhân viên</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div class="mb-3">
+                                                                <label for="manhanvien" class="form-label">Mã nhân viên</label>
+                                                                <input type="text" class="form-control" id="manhanvien" value="">
+                                                              </div>
+                                                            <div class="mb-3">
+                                                              <label for="tennhanvien" class="form-label">Tên nhân viên</label>
+                                                              <input type="text" class="form-control" id="tennhanvien" value="">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="sdt" class="form-label">Số điện thoại</label>
+                                                                <input type="text" class="form-control" id="sdt" value="">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="email" class="form-label">Email</label>
+                                                                <input type="email" class="form-control" id="email" value="">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="username" class="form-label">Username</label>
+                                                                <input type="text" class="form-control" id="username" value="">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="matkhau" class="form-label">Mật khẩu</label>
+                                                                <input type="text" class="form-control" id="matkhau" value="">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="maloainhanvien" class="form-label">Mã loại nhan viên</label>
+                                                                <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example" id="maloainhanvien">
+                                                                    <option selected value="1">LN001</option>
+                                                                    <option value="2">LN002</option>
+                                                                    
+                                                                  </select>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                                        <button type="button" class="btn btn-primary btnThemnhanvien">Thêm</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-3 col-12">
+                                            <div class="data_table">
+                                                <table id="table_nhanvien" class="table table-striped table-bordered">
+                                                    <thead class="table-dark">
+                                                        <tr>
+                                                            <th id="manhanvien">Mã nhân viên</th>
+                                                            <th id="tennhanvien">Tên nhân viên</th>
+                                                            <th id="sdt">Số điện thoại</th>
+                                                            <th id="email">Email</th>
+                                                            <th id="username">Username</th>
+                                                            <th id="matkhau">Mật khẩu</th>
+                                                            <th id="maloainhanvien">Mã loại nhân viên</th>
+                                                            <th id="">Hành động</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                          
+                                                        <tr>
+                                                            <th>NV001</th>
+                                                            <td>Đào Hữu Hoàng Quân</td>
+                                                            <td>0381721711</td>
+                                                            <td>quan@gmail.com</td>
+                                                            <td>quan1234</td>
+                                                            <td>quan1234</td>
+                                                            <td>LN001</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NV002</th>
+                                                            <td>Tô Văn Sơn</td>
+                                                            <td>0381721711</td>
+                                                            <td>quan@gmail.com</td>
+                                                            <td>quan1234</td>
+                                                            <td>quan1234</td>
+                                                            <td>LN002</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>NV003</th>
+                                                            <td>Phặm Văn Quốc Vĩnh</td>
+                                                            <td>0381721711</td>
+                                                            <td>quan@gmail.com</td>
+                                                            <td>quan1234</td>
+                                                            <td>quan1234</td>
+                                                            <td>LN003</td>
+                                                            <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a>      
+                                                                <a href=""><i class="fa-solid fa-trash"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                          
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                
+                                    </div>
+
+                            
+                                </div>
+
+                                <hr style="width: 1110px">
+                                <div class="row p-3"></div>
+                                <div class="row">
+                                    <div class="row justify-content-between">
+                                        <h4 class="col-lg-5">Loại nhân viên</h4>
+                                    </div>
+                                    <div class="row pt-3 col-12">
+                                        <div class="data_table">
+                                            <table id="table_loainhanvien" class="table table-striped table-bordered">
+                                                <thead class="table-dark">
+                                                    <tr>
+                                                        <th id="maloainhanvien">Mã loại nhân viên</th>
+                                                        <th id="loainhanvien">Loại nhân viên</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>                                          
+                                                    <tr>
+                                                        <th>LN001</th>
+                                                        <td>Quản lý kho</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>LN002</th>
+                                                        <td>Nhân viên kho</td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/datatables.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- <script>
+           
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap'
+        });
+    </script>  -->
+</body>
+</html>

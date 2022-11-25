@@ -1,0 +1,66 @@
+html {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    
+}
+
+body {
+    height: 100%;
+	width: 100%;
+    background-color: #1a91ab;
+    background-image: linear-gradient(19deg, #3eb2cc66 0%, #a62edd86 100%);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+    margin: 0;
+    color: black;
+    font-size: 17px;
+}
+
+.logo {
+    width: 300px;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #0D324D;
+    padding: 20px 20px 10px 20px;
+    background-color: #ffffff96;
+}
+
+
+.form-control {
+    background-color: transparent;
+    border: #EB690A solid 1px;
+}
+
+
+.btn-primary {
+
+    color: white;
+    background: #af6836;
+    border-color: white;
+}
+
+.btn-primary:hover {
+    background-color: #EB690A;
+    border-color: none;
+    color: black;
+}
+
+
+
+
+
+
+
+
+

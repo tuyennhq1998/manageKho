@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./css/signin.css">
+
+</head>
+<body>
+    <div class="header header-login width-full pt-5 pb-5" role="banner">
+        <div class="container clearfix width-full text-center">
+            <a href=""><img src="./img/logo.png" alt="" class="logo pb-1"></a>
+        </div>
+    </div>
+
+    <main>
+        <form action="{{url('login')}}" method="post">
+            @csrf
+            <div class="mb-3">
+              <label for="username" class="form-label">Tên người dùng</label>
+              <input type="text" class="form-control" class="input-field" id="username" name="username" value="" required>
+            <div class="mt-3 mb-4">
+              <label for="matkhau" class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" class="input-field" id="matkhau" name="matkhau" value="" required>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            </div>
+        </form>
+    </main>    
+</body>
+</html>
