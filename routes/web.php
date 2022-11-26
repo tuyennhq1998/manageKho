@@ -31,3 +31,7 @@ Route::get('/nhanvien', [App\Http\Controllers\HomeController::class, 'nhanvien']
 //Post method
 Route::post('login', [App\Http\Controllers\LoginController::class, 'login']);
 Route::post('themnhanvien', [App\Http\Controllers\NhanVienController::class, 'themnhanvien']);
+Route::post('themdanhmuc', [App\Http\Controllers\CategoriesController::class, 'themdanhmuc']);
+Route::post('themkehang', [App\Http\Controllers\KeHangController::class, 'themkehang']);
+Route::post('themnhacungcap', [App\Http\Controllers\NCCController::class, 'themnhacungcap']);
+Route::post('themnhasanxuat', [App\Http\Controllers\NSXController::class, 'themnhasanxuat']);

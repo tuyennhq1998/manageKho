@@ -91,9 +91,9 @@
                     <ul class="nav nav-tabs">
                         <li class="nav-item"><a class="nav-link" href="{{url('home')}}">Sản phẩm</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('categories')}}">Danh mục</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{url('lohang')}}">Lô hàng</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="{{url('lohang')}}">Lô hàng</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('donvisanpham')}}">Đơn vị sản phẩm</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{url('kehang')}}">Kệ hàng</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url('kehang')}}">Kệ hàng</a></li> -->
                         <li class="nav-item"><a class="nav-link" href="{{url('nhapkho')}}">Nhập kho</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('xuatkho')}}">Xuất kho</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('nhasanxuat')}}">Nhà sản xuất</a></li>

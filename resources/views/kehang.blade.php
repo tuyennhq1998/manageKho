@@ -16,22 +16,23 @@
                                                       <h1 class="modal-title fs-5" id="themkeLabel">Thêm kệ</h1>
                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
+                                                    <form action="{{url('themkehang')}}" method="post">
+                                                        @csrf
                                                     <div class="modal-body">
-                                                        <form>
                                                             <div class="mb-3">
                                                                 <label for="make" class="form-label">Mã kệ</label>
-                                                                <input type="text" class="form-control" id="make" value="">
+                                                                <input type="text" class="form-control" name="make" value="">
                                                               </div>
                                                             <div class="mb-3">
                                                               <label for="soluongchuaconlai" class="form-label">Số lượng chứa còn lại</label>
-                                                              <input type="text" class="form-control" id="soluongchuaconlai" value="">
+                                                              <input type="text" class="form-control" name="soluongchuaconlai" value="">
                                                             </div>
-                                                        </form>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                                                        <button type="button" class="btn btn-primary btnThemke">Thêm</button>
+                                                        <button type="submit" class="btn btn-primary btnThemke">Thêm</button>
                                                     </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

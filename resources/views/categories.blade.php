@@ -16,22 +16,23 @@
                                                       <h1 class="modal-title fs-5" id="themdanhmucLabel">Thêm danh mục</h1>
                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
+                                                    <form action="{{url('themdanhmuc')}}" method="post">
                                                     <div class="modal-body">
-                                                        <form>
+                                                            @csrf
                                                             <div class="mb-3">
                                                                 <label for="madanhmuc" class="form-label">Mã danh mục</label>
-                                                                <input type="text" class="form-control" id="madanhmuc" value="">
+                                                                <input type="text" class="form-control" id="madanhmuc" name="madanhmuc" readonly>
                                                               </div>
                                                             <div class="mb-3">
                                                               <label for="tendanhmuc" class="form-label">Tên danh mục</label>
-                                                              <input type="text" class="form-control" id="tendanhmuc" value="">
+                                                              <input type="text" class="form-control" id="tendanhmuc" name="tendanhmuc" onkeyup="string_to_slug()">
                                                             </div>
-                                                        </form>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                                                        <button type="button" class="btn btn-primary btnThemdanhmuc">Thêm</button>
+                                                        <button type="submit" class="btn btn-primary btnThemdanhmuc">Thêm</button>
                                                     </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -69,4 +70,25 @@
                                 </div>
                             </div>
                         </div>
+<script>
+function string_to_slug () {
+    str = document.getElementById("tendanhmuc").value;
+
+    str = str.replace(/^\s+|\s+$/g, ''); // trim
+    str = str.toLowerCase();
+  
+    // remove accents, swap ñ for n, etc
+    var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+    var to   = "aaaaeeeeiiiioooouuuunc------";
+    for (var i=0, l=from.length ; i<l ; i++) {
+        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+    }
+
+    str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+        .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        .replace(/-+/g, '-'); // collapse dashes
+
+    document.getElementById("madanhmuc").value = str;
+}
+</script>
 @stop
