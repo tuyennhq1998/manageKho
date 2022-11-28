@@ -37,3 +37,4 @@ Route::post('themnhacungcap', [App\Http\Controllers\NCCController::class, 'themn
 Route::post('themnhasanxuat', [App\Http\Controllers\NSXController::class, 'themnhasanxuat']);
 Route::post('themphieunhap', [App\Http\Controllers\PhieuNhapController::class, 'themphieunhap']);
 Route::post('themphieuxuat', [App\Http\Controllers\PhieuXuatController::class, 'themphieuxuat']);
+Route::post('themsanpham', [App\Http\Controllers\NSXController::class, 'themsanpham']);

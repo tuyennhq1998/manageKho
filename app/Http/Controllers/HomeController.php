@@ -12,8 +12,11 @@ class HomeController extends Controller
     }
 
     public function home() {
+        $danhmuc = DB::table('danh_muc')->get();
+        $nhasanxuat = DB::table('nha_san_xuat')->get();
+
         $products = DB::select('select san_pham.MA_SP,san_pham.TEN_SP,san_pham.SL_KHO,san_pham.DON_GIA, danh_muc.TEN_DM,nha_san_xuat.TEN_NSX from san_pham join danh_muc on san_pham.MA_DM=danh_muc.MA_DM join nha_san_xuat on san_pham.MA_NSX = nha_san_xuat.MA_NSX');
-        return view('home', ['sanpham' => $products]);
+        return view('home', ['sanpham' => $products, 'danhmuc' => $danhmuc, 'nhasanxuat' => $nhasanxuat]);
     }
 
     public function categories() {
