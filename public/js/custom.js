@@ -208,9 +208,8 @@ $(document).ready(function() {
         $.each($("#tab_logic tbody tr:nth(0) td"), function() {
             var td;
             var cur_td = $(this);
-            
+
             var children = cur_td.children();
-            
             // add new td and element if it has a nane
             if ($(this).data("name") !== undefined) {
                 td = $("<td></td>", {

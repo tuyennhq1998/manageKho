@@ -12,7 +12,7 @@ class HomeController extends Controller
     }
 
     public function home() {
-        $products = DB::select('select san_pham.MA_SP,san_pham.TEN_SP,san_pham.SL_KHO,san_pham.DON_VI_TINH,san_pham.DON_GIA, danh_muc.TEN_DM,nha_san_xuat.TEN_NSX from san_pham join danh_muc on san_pham.MA_DM=danh_muc.MA_DM join nha_san_xuat on san_pham.MA_NSX = nha_san_xuat.MA_NSX');
+        $products = DB::select('select san_pham.MA_SP,san_pham.TEN_SP,san_pham.SL_KHO,san_pham.DON_GIA, danh_muc.TEN_DM,nha_san_xuat.TEN_NSX from san_pham join danh_muc on san_pham.MA_DM=danh_muc.MA_DM join nha_san_xuat on san_pham.MA_NSX = nha_san_xuat.MA_NSX');
         return view('home', ['sanpham' => $products]);
     }
 
@@ -37,7 +37,13 @@ class HomeController extends Controller
     }
     public function nhapkho() {
         $nhapkho = DB::select('SELECT phieu_nhap.MA_PHIEU_NHAP, phieu_nhap.TONG_TIEN, phieu_nhap.GHI_CHU, phieu_nhap.NGAY_LAP, nhan_vien.TEN_NV, n_cung_cap.TEN_NCC from phieu_nhap join nhan_vien on phieu_nhap.MA_NV = nhan_vien.MA_NV join n_cung_cap on phieu_nhap.MA_NCC = n_cung_cap.MA_NCC');
-        return view('nhapkho', ['nhapkho' => $nhapkho]);
+        $nhacungcap = DB::table('n_cung_cap')->get();
+        $sanpham = DB::table('san_pham')->get();
+        $ar = [];
+        foreach ($sanpham as $s) {
+            $ar[] = $s->TEN_SP;
+        }
+        return view('nhapkho', ['nhapkho' => $nhapkho, 'nhacungcap' => $nhacungcap, 'sanpham' => ($ar)]);
     }
     public function xuatkho() {
         $xuatkho = DB::select('SELECT phieu_xuat.MA_PHIEU_XUAT, phieu_xuat.TONG_TIEN, phieu_xuat.GHI_CHU, phieu_xuat.NGAY_LAP, nhan_vien.TEN_NV, n_cung_cap.TEN_NCC from phieu_xuat join nhan_vien on phieu_xuat.MA_NV = nhan_vien.MA_NV join n_cung_cap on phieu_xuat.MA_NCC = n_cung_cap.MA_NCC');

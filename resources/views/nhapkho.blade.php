@@ -16,31 +16,31 @@
                                                       <h1 class="modal-title fs-5" id="lapphieunhapLabel">Lập phiếu nhập</h1>
                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
+                                                    <form action="{{url('themphieunhap')}}" method="post">
+                                                        @csrf
                                                     <div class="modal-body">
                                                         <div class="row clearfix">
                                                             <div class="col-md-12 table-responsive">
-                                                                <form>
                                                                     <div class="mb-3">
                                                                         <label for="maphieunhap" class="form-label">Mã phiếu nhập</label>
-                                                                        <input type="text" class="form-control" id="maphieunhap" value="">
+                                                                        <input type="text" class="form-control" name="maphieunhap" value="">
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="ngaynhap" class="form-label">Ngày nhập</label>
-                                                                        <input type="date" class="form-control" id="ngaynhap" value="">
+                                                                        <input type="date" class="form-control" name="ngaynhap" value="">
                                                                     </div>
                                                                     <div class="mb-3">
                                                                       <label for="tennhanvien" class="form-label">Tên nhân viên</label>
-                                                                      <input type="text" class="form-control" id="tennhanvien" value="">
+                                                                      <input type="text" class="form-control" name="tennhanvien" value="">
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="manhanvien" class="form-label">Mã nhân viên</label>
-                                                                        <input type="text" class="form-control" id="manhanvien" value="">
+                                                                        <input type="text" class="form-control" name="manhanvien" value="">
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="tennhacungcap" class="form-label">Nhà cung cấp</label>
-                                                                        <input type="text" class="form-control" id="tennhacungcap" value="">
+                                                                        <input type="text" class="form-control" name="manhacungcap" value="">
                                                                     </div>
-                                                                </form>
                                                                 <div class="row pt-5"></div>
 
                                                                 <table class="table table-bordered table-hover table-sortable" id="tab_logic">
@@ -71,9 +71,6 @@
                                                                             <td data-name="dongia">
                                                                                 <input type="text" name='dongia' class="form-control" value=""/>
                                                                             </td>
-                                                                            <td data-name="donvitinh">
-                                                                                <input type="text" name='donvitinh' class="form-control" value=""/>
-                                                                            </td>
                                                                             <td data-name="del">
                                                                                 <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
                                                                             </td>
@@ -87,20 +84,18 @@
 
                                                         <div class="row clearfix pt-5">
                                                             <div class="col-md-12 table-responsive">
-                                                                <form>
                                                                     <div class="mb-3">
                                                                         <label for="ghichu" class="form-label">Ghi chú</label>
-                                                                        <input type="text" class="form-control" id="ghichu" value="">
+                                                                        <input type="text" class="form-control" name="ghichu" value="">
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="tongtien" class="form-label">Tổng tiền bằng số</label>
-                                                                        <input type="text" class="form-control" id="tongtien" value="">
+                                                                        <input type="text" class="form-control" name="tongtien" value="">
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label for="tongtienchu" class="form-label">Tổng tiền bằng chữ</label>
-                                                                        <input type="text" class="form-control" id="tongtienchu" value="">
+                                                                        <input type="text" class="form-control" name="tongtienchu" value="">
                                                                     </div>
-                                                                </form>
                                                             </div>
                                                         </div>
 
@@ -108,8 +103,9 @@
 
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                                                        <button type="button" class="btn btn-primary btnLapphieunhap">Xác nhận lập phiếu</button>
+                                                        <button type="submit" class="btn btn-primary btnLapphieunhap">Xác nhận lập phiếu</button>
                                                     </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

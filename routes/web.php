@@ -35,3 +35,5 @@ Route::post('themdanhmuc', [App\Http\Controllers\CategoriesController::class, 't
 Route::post('themkehang', [App\Http\Controllers\KeHangController::class, 'themkehang']);
 Route::post('themnhacungcap', [App\Http\Controllers\NCCController::class, 'themnhacungcap']);
 Route::post('themnhasanxuat', [App\Http\Controllers\NSXController::class, 'themnhasanxuat']);
+Route::post('themphieunhap', [App\Http\Controllers\PhieuNhapController::class, 'themphieunhap']);
+Route::post('themphieuxuat', [App\Http\Controllers\PhieuXuatController::class, 'themphieuxuat']);
